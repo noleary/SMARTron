@@ -1,0 +1,7 @@
+#surefire
+#Fri Apr 26 01:18:18 EDT 2019
+maven.ext.class.path=C\:\\Program Files\\NetBeans 8.1\\java\\maven-nblib\\netbeans-eventspy.jar
+user.dir=C\:\\Users\\Vincent\\Documents\\NetBeansProjects\\SMARTron-develop
+file.encoding=UTF-8
+localRepository=C\:\\Users\\Vincent\\.m2\\repository
+basedir=C\:\\Users\\Vincent\\Documents\\NetBeansProjects\\SMARTron-develop
