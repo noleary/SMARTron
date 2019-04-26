@@ -130,7 +130,8 @@ public class JSONBuilder {
         ret.put("cronbach", stats.getCronbach());
         ret.put("questionFrequency", stats.getFrequency());
         ret.put("percentile", stats.getPercentiles());
-        ret.put("deviation", stats.getDeviation());
+        //ret.put("deviation", stats.getDeviation());
+        ret.put("standardDeviation", stats.getDeviation());
 
         try(FileWriter f = new FileWriter("Stats.txt")){
             f.write(ret.toString());
