@@ -1,9 +1,14 @@
 package Database;
 
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class ConnectionFactory {
 
@@ -35,6 +40,21 @@ public class ConnectionFactory {
 	 * @throws SQLException
 	 */
 	public Connection getConnection() throws SQLException {
+
+		// references the properties file in resource folder to connect to database
+		String fileName = "db.properties";
+		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
+
+			try (InputStream propFile = classLoader.getResourceAsStream(fileName)) {
+            Properties prop = new Properties();
+            prop.load(propFile);
+            user = prop.getProperty("user");
+            password = prop.getProperty("password");
+        } catch (IOException ex) {
+        	System.out.println("no properties file found")
+        	ex.printStackTrace();
+        }
+
 		Connection con = null;
 		con = DriverManager.getConnection(url, user, password);
 		return con;
